@@ -1,9 +1,8 @@
-package com.springanddragons.character.command;
+package com.springanddragons.character;
 
+import com.springanddragons.character.command.CreateCharacterCommand;
 import com.springanddragons.character.event.CharacterCreatedEvent;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;

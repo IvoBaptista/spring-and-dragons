@@ -9,10 +9,14 @@ import org.springframework.context.annotation.FilterType;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan(value = "com.springanddragons", excludeFilters = {@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, value = InitializeApplication.class)})
+@ComponentScan(value = "com.springanddragons",
+        excludeFilters = {@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE,
+                value = {
+                        SerializationExperimentsApplication.class
+                })})
 @EntityScan(value = {"com.springanddragons", "org.axonframework.eventhandling.tokenstore",
-		"org.axonframework.modelling.saga.repository.jpa",
-		"org.axonframework.eventsourcing.eventstore.jpa"})
+        "org.axonframework.modelling.saga.repository.jpa",
+        "org.axonframework.eventsourcing.eventstore.jpa"})
 @EnableJpaRepositories(value = "com.springanddragons")
 @Slf4j
 public class CharacterApplication {
